@@ -1,0 +1,320 @@
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --color-1: #121826;
+  --color-2: #E5E7EB;
+  --color-3: #FFFFFF;
+  --color-4: #263FA9;
+  --color-5: #F8FAFC;
+  --color-6: #4D5562;
+  --color-7: #7C4F1E;
+  --color-8: #4D556233;
+
+  --font-family: "Be Vietnam Pro";
+}
+
+/* ================= BODY ================= */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6.09vh;
+}
+
+/* ================= TYPOGRAPHY ================= */
+/* Heading font */
+h1 {
+  font-size: 32px;
+  font-family: var(--font-family);
+}
+@media (width < 721px) {
+    .cards h2 {
+        font-size: 32px;
+        font-family: var(--font-family), semi-bold;
+    }
+}
+/* Regular body text font */
+.header .header-text p,
+.cards h3,
+.cards p {
+  font-size: 1rem;
+  font-family: var(--font-family);
+}
+/* Bold body font */
+.text p,
+.cards h1,
+.cards .get-started p {
+  font-size: 1rem;
+  font-family: var(--font-family), semi-bold;
+}
+/* Big Heading */
+.cards h2 {
+  font-size: 64px;
+  font-family: var(--font-family), bold;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  height: 196px;
+  width: 100%;
+  justify-content: center;
+}
+
+.header img {
+  width: 100%;
+  height: auto;
+  display: flex;
+  background-color: var(--color-5);
+}
+
+.header-text {
+  position: absolute;
+}
+
+@media (width > 420px) {
+  .header-text {
+    top: 52px;
+    width: 444px;
+  }
+}
+
+@media (width <= 420px) {
+  .header-text {
+    top: 36px;
+  }
+
+  h1,
+  p {
+    width: 94.26vw;
+  }
+}
+
+:is(.header-text, .colored-container) :is(h1, p),
+.cards p {
+  color: var(--color-1);
+  text-align: center;
+  height: 52px;
+}
+
+/* ================= CONTAINER ================= */
+.base-layer, .layer {
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 70.66vh;
+}
+
+@media (width >= 1350px) {
+  .container { width: 1136px; }
+}
+
+@media (width >= 1136px) and (width < 1350px) {
+  .container { width: 84.15vw; }
+}
+
+@media (width >= 1024px) and (width < 1136px) {
+  .container { width: 89.84vw; }
+}
+
+@media (width < 1024px) {
+  .container { width: 87.56vw; }
+}
+
+/* ================= GRID SECTION ================= */
+.grid-container {
+  position: relative;
+  width: 100%;
+  height: 416px;
+  top: 208px;
+  border-radius: 16px 0 0 16px;
+  box-shadow: 0 1px 0 var(--color-2);
+  overflow: hidden;
+}
+
+.colored-container {
+  z-index: 5;
+  width: 216px;
+  height: 100%;
+  background-color: var(--color-5);
+  border-radius: 16px 0px 0px 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media (width < 1024px) {
+  .colored-container {
+    width: 23.92vw;
+  }
+}
+
+/* ================= TEXT GRID ================= */
+.text {
+  position: absolute;
+  left: 12px;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.text p {
+  text-align: left;
+  color: var(--color-1);
+}
+
+/* ================= LINES ================= */
+.lines {
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.box {
+  border-bottom: 1px solid var(--color-2);
+}
+
+/* ================= FLEX CARDS ================= */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  background-color: green;
+}
+
+/* Desktop */
+@media (width >= 1350px) {
+  .flex-container {
+    width: 870px;
+    height: 696px;
+    left: 240px;
+  }
+}
+
+@media (width >= 1024px) and (width < 1350px) {
+  .flex-container {
+    width: 64.44vw;
+    height: 696px;
+    left: 240px;
+  }
+}
+
+/* Tablet */
+@media (width > 721px) and (width <= 1187px) {
+  .flex-container {
+    width: 64.444444vw;
+    left: 23.4375vw;
+    height: 696px;
+  }  
+  .flex-container > :first-child {
+    display: none;
+  }
+
+  .flex-container > :nth-child(n+2) {
+    flex: 1;
+  }
+}
+
+/* Mobile */
+@media (width <= 721px) {
+  .flex-container {
+    width: 64.444444vw;
+    left: 23.4375vw;
+    height: 70.65989848vh;
+    flex-direction: row-reverse;
+  }
+
+  .flex-container > :nth-child(-n+2) {
+    display: none;
+  }
+
+  .flex-container > :nth-child(n+3) {
+    flex: 1;
+  }
+
+  .flex-container > :nth-child(n+3) h2 {
+    font-size: 48px;
+  }
+}
+
+/* ================= PRICE CARDS ================= */
+.Price-1,
+.Price-2,
+.Price-4 {
+  z-index: 1;
+}
+
+.Price-3 {
+  z-index: 2;
+  background-color: var(--color-1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.Price-3 :is(h1, h2, h3, p) {
+  color: var(--color-3);
+}
+
+:is(.Price-1, .Price-2, .Price-4) :is(h1, .get-started p) {
+  color: var(--color-4);
+}
+
+.Price-3 h1 {
+  width: 86px;
+  background-color: var(--color-4);
+  border-radius: 12px;
+  justify-self: center;
+}
+
+/* ================= CARDS GRID ================= */
+.cards {
+  position: relative;
+  min-width: none;
+  max-width: 100%;
+  flex: 1;
+  display: grid;
+  height: 100%;
+  grid-template-rows:
+    24px 24px 20px 64px 12px 24px 40px
+    repeat(8, 1fr)
+    72px;
+  justify-content: center;
+}
+
+.cards img {
+  width: 20px;
+  height: 20px;
+  justify-self: center;
+}
+
+/* ================= GET STARTED ================= */
+.get-started {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: greenyellow;
+}
+
+.get-started img {
+  width: 24px;
+  height: 24px;
+}
+
+.get-started p {
+  width: 94px;
+  height: 24px;
+}
+
+@media (width <= 721px) {
+  .get-started img {
+    display: none;
+  }
+}
